@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Hari L — Mechanical Engineering student building edge ML, fintech tools, and CFD systems.">
+  <meta property="og:title" content="Hari L · Portfolio">
+  <meta property="og:description" content="Engineering Systems Builder — Edge AI, Fintech, CFD">
+  <title>Hari L - Portfolio</title>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts: DM Sans (300, 400, 500) & Playfair Display (400, 700) -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-logo">HL</div>
+    <div class="nav-links desktop-only">
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-hamburger mobile-only" aria-label="Menu">☰</button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <div class="mobile-nav-links">
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#achievements" class="mobile-nav-link">Achievements</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+  </div>
+
+  <main>
+    <section id="hero">
+      <!-- Background Animated Dots -->
+      <div class="hero-bg-dots"></div>
+
+      <div class="hero-content">
+        <!-- Optional smaller intro subtext pill -->
+        <h1 class="hero-name">Hari L</h1>
+        <h2 class="hero-typewriter"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h2>
+        <p class="hero-bio">
+          I study Mechanical Engineering but spend most of my time building 
+          engineering systems that combine simulation, hardware, and software.
+        </p>
+        
+        <div class="hero-pills">
+          <a href="#projects" class="pill" data-target="brainbolt">🏆 ASME BrainBolt 2025 — CFD Finalist</a>
+          <a href="#projects" class="pill" data-target="guard">🔬 Gramin Guard (Edge ML)</a>
+          <a href="#projects" class="pill" data-target="rbi">🚀 RBI Risk Tool</a>
+          <a href="#projects" class="pill" data-target="wind">⚡ Wind Turbine AI</a>
+          <a href="#projects" class="pill" data-target="kayak">🛶 Kayak Design</a>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">01</span>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="ml-iot">ML & IoT</button>
+          <button class="filter-tab" data-filter="fintech">Fintech</button>
+          <button class="filter-tab" data-filter="simulation">Simulation</button>
+          <button class="filter-tab" data-filter="design">Design</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Card 1 -->
+          <div class="project-card" data-tag="simulation">
+            <div class="card-top">
+              <span class="card-badge badge-gold">🏆 Finalist · HICC Hyderabad</span>
+              <span class="card-tag">Simulation</span>
+            </div>
+            <h3 class="card-title">ASME BrainBolt — CFD Sprint</h3>
+            <p class="card-desc">Finalist in Ansys/CADFEM CFD automation hackathon. Led R&D for mixing tank optimization and vehicle aerodynamics using PyFluent scripting under sprint conditions.</p>
+            <div class="card-stack">
+              <span class="stack-pill">PyFluent</span>
+              <span class="stack-pill">PyAnsys</span>
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">CFD Automation</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="project-card" data-tag="ml-iot">
+            <div class="card-top">
+              <span class="card-badge badge-green">🔬 Functional Prototype</span>
+              <span class="card-tag">ML & IoT</span>
+            </div>
+            <h3 class="card-title">Gramin Guard</h3>
+            <p class="card-desc">Predictive monitoring for rural cold storage — detects compressor failures 2–3 days early. Edge ML on Raspberry Pi Zero, offline-first, CT sensor-based. Addresses SDG 3 & 9.</p>
+            <div class="card-stack">
+              <span class="stack-pill">Raspberry Pi</span>
+              <span class="stack-pill">Edge ML</span>
+              <span class="stack-pill">IoT</span>
+              <span class="stack-pill">Anomaly Detection</span>
+            </div>
+            <div class="card-links">
+              <a href="https://defaulte-r.github.io/Garmin-Guard/" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="View Project">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="project-card" data-tag="fintech">
+            <div class="card-top">
+              <span class="card-badge badge-amber">🚀 Live & Deployed</span>
+              <span class="card-tag">Fintech</span>
+            </div>
+            <h3 class="card-title">RBI Risk Prioritization Tool</h3>
+            <p class="card-desc">Live deployed risk assessment for pressure vessel inspection in Indian refineries. Auditable deterministic logic — no black-box ML. Downloadable inspection priority reports.</p>
+            <div class="card-stack">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">Streamlit</span>
+              <span class="stack-pill">Pandas</span>
+            </div>
+            <div class="card-links">
+              <a href="https://github.com/DEFAULTE-R/rbi-risk-prioritization/tree/main" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              </a>
+              <a href="https://rbi-risk-prioritization.streamlit.app" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Live Demo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="project-card" data-tag="ml-iot">
+            <div class="card-top">
+              <span class="card-badge badge-green">🥉 3rd Place · IEI 2025</span>
+              <span class="card-tag">ML & IoT</span>
+            </div>
+            <h3 class="card-title">Wind Turbine Edge AI</h3>
+            <p class="card-desc">Digital twin and Edge AI proof-of-concept for wind turbine performance optimization. Presented at IEI Energy Conservation Day 2025.</p>
+            <div class="card-stack">
+              <span class="stack-pill">Edge AI</span>
+              <span class="stack-pill">Digital Twin</span>
+              <span class="stack-pill">Anomaly Detection</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="project-card" data-tag="design">
+            <div class="card-top">
+              <span class="card-badge badge-blue">📌 SIH Selected</span>
+              <span class="card-tag">Design</span>
+            </div>
+            <h3 class="card-title">Kayak Paddle Optimization</h3>
+            <p class="card-desc">User-specific kayak paddle design integrating biomechanical force analysis with generative design in Fusion 360.</p>
+            <div class="card-stack">
+              <span class="stack-pill">Fusion 360</span>
+              <span class="stack-pill">Generative Design</span>
+              <span class="stack-pill">Biomechanics</span>
+              <span class="stack-pill">CAD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">02</span>
+          <h2>About</h2>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-left">
+            <blockquote class="about-quote">
+              "I study Mechanical Engineering but spend most of my time building engineering systems that combine simulation, hardware, and software."
+            </blockquote>
+            <p class="about-desc">
+              Currently in my second year at Saveetha Engineering College, I've worked across CFD automation, edge computing, and deployed fintech tooling — always with a focus on systems that solve real problems.
+            </p>
+            <div class="about-pills">
+              <span class="pill">⚙️ I deploy things</span>
+              <span class="pill">🔗 I bridge hardware + software</span>
+              <span class="pill">🎯 I lead teams</span>
+            </div>
+          </div>
+          
+          <div class="about-right">
+            <h3 class="roles-title">Roles & Involvement</h3>
+            <ul class="roles-list">
+              <li>
+                <span class="role-name">SAE India Southern Section</span>
+                <span class="role-details">Co-Captain · Material Selection Lead · Jan 2026–Present</span>
+              </li>
+              <li>
+                <span class="role-name">ASME Student Chapter</span>
+                <span class="role-details">Treasurer · Saveetha Engineering College · 2025–Present</span>
+              </li>
+              <li>
+                <span class="role-name">Smart India Hackathon 2025</span>
+                <span class="role-details">Selected Project</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">03</span>
+          <h2>What I Work With</h2>
+        </div>
+
+        <div class="skills-wrapper">
+          <div class="skill-group">
+            <h4 class="skill-label">Languages & Tools</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Streamlit</span>
+              <span class="skill-pill">Pandas</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">HTML & CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-label">Simulation & CFD</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">ANSYS Fluent</span>
+              <span class="skill-pill">PyFluent</span>
+              <span class="skill-pill">PyAnsys</span>
+              <span class="skill-pill">CFD Automation</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-label">Design & CAD</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Fusion 360</span>
+              <span class="skill-pill">Generative Design</span>
+              <span class="skill-pill">3D Printing</span>
+              <span class="skill-pill">Biomechanics</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-label">Systems & Hardware</h4>
+            <div class="skill-pills">
+              <span class="skill-pill">Raspberry Pi</span>
+              <span class="skill-pill">Edge ML</span>
+              <span class="skill-pill">IoT</span>
+              <span class="skill-pill">Embedded Systems</span>
+              <span class="skill-pill">Anomaly Detection</span>
+            </div>
+          </div>
+
+          <div class="skill-group skill-group-learning">
+            <h4 class="skill-label">Currently Learning</h4>
+            <div class="skill-pills">
+              <span class="skill-pill dashed"><span class="learning-arrow">↑</span> React</span>
+              <span class="skill-pill dashed"><span class="learning-arrow">↑</span> Next.js</span>
+              <span class="skill-pill dashed"><span class="learning-arrow">↑</span> SQL</span>
+              <span class="skill-pill dashed"><span class="learning-arrow">↑</span> TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="achievements">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">04</span>
+          <h2>Achievements</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <!-- Card 1 -->
+          <div class="achievement-card">
+            <div class="achievement-icon">🏆</div>
+            <h3 class="achievement-title">ASME BrainBolt Finalist</h3>
+            <p class="achievement-detail">The Engineer's Sprint · HICC, Hyderabad · 2025</p>
+            <p class="achievement-subtext">CFD automation challenge by Ansys & CADFEM</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="achievement-card">
+            <div class="achievement-icon">🥉</div>
+            <h3 class="achievement-title">IEI Energy Conservation Day</h3>
+            <p class="achievement-detail">3rd Place · Project Exhibition · Dec 2025</p>
+            <p class="achievement-subtext">Edge AI & Digital Twin concept among first-year teams</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="achievement-card">
+            <div class="achievement-icon">📌</div>
+            <h3 class="achievement-title">Smart India Hackathon 2025</h3>
+            <p class="achievement-detail">Selected Project</p>
+            <p class="achievement-subtext">Kayak Paddle Optimization — generative design & biomechanics</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label">05</span>
+          <h2>Let's Talk</h2>
+        </div>
+        
+        <p class="contact-subtext">Open to SWE, ML, and PM internship conversations. I respond.</p>
+
+        <div class="contact-grid">
+          <!-- Card 1 -->
+          <a href="mailto:harilogesh2019@gmail.com" class="contact-card">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">harilogesh2019@gmail.com</span>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="https://github.com/DEFAULTE-R" class="contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">DEFAULTE-R</span>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="https://www.linkedin.com/in/haril2019/" class="contact-card" target="_blank" rel="noopener noreferrer">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">Connect</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="section-container">
+      <p>Hari L · Built from scratch · 2026</p>
+    </div>
+  </footer>
+
+  <!-- Custom Cursor Elements -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-outline" class="cursor-outline"></div>
+  
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
