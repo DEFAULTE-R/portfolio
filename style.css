@@ -1,8 +1,9 @@
 :root {
-  --bg: #080808;
-  --bg-card: #111111;
-  --bg-card-hover: #161616;
-  --border: #1E1E1E;
+  /* Colors */
+  --bg: #0A0E1A;
+  --bg-card: #111827;
+  --bg-card-hover: #1a2235;
+  --border: #1E2A3A;
   --border-hover: #F5A623;
   --text-primary: #F0EDE8;
   --text-muted: #6B6B6B;
@@ -79,8 +80,8 @@ section {
 }
 
 #navbar.scrolled {
-  background-color: #111111;
-  border-bottom: 1px solid #1E1E1E;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
@@ -202,43 +203,54 @@ section {
 /* --- HERO SECTION --- */
 #hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 100svh; /* full viewport height, handles mobile address bars better */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   overflow: hidden;
-  padding-top: 80px; /* Offset for navbar */
 }
 
-/* Animated Dots Background */
+#hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 60% 60% at 50% 50%,
+    transparent 30%,
+    #0A0E1A 100%
+  );
+  pointer-events: none;
+}
+
 .hero-bg-dots {
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  z-index: -1;
-  background-image: radial-gradient(var(--text-muted) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.15;
-  animation: driftDots 20s infinite alternate ease-in-out;
+  z-index: 0;
+  background-image: radial-gradient(circle, rgba(245,166,35,0.25) 1.5px, transparent 1.5px);
+  background-size: 36px 36px;
+  animation: driftDots 25s infinite alternate ease-in-out;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes driftDots {
   0% { transform: translate(0, 0); }
-  100% { transform: translate(50px, 50px); }
+  100% { transform: translate(40px, 40px); }
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
-  padding: 0 1.5rem;
 }
 
 .hero-name {
@@ -636,42 +648,73 @@ section {
   font-weight: 400;
 }
 
-.skill-pills {
+.skill-tiles-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.skill-pill {
+.skill-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 6px 14px;
-  font-size: 13px;
+  border-radius: 12px;
+  padding: 18px 14px;
+  width: 90px;
+  cursor: default;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-tile i {
+  font-size: 28px;
+  transition: transform 0.3s ease;
+}
+
+.skill-tile span {
   font-family: 'DM Sans', sans-serif;
-  color: var(--text-primary);
-  transition: all 0.25s ease;
-}
-
-.skill-pill:hover {
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.skill-pill.dashed {
-  border-style: dashed;
+  font-size: 11px;
   color: var(--text-muted);
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
-.skill-pill.dashed:hover {
+/* Text fallback tile */
+.skill-tile-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--accent);
 }
 
-.learning-arrow {
-  margin-right: 4px;
-  font-size: 10px;
-  display: inline-block;
+/* Hover animation */
+.skill-tile:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-4px);
+}
+
+.skill-tile:hover i {
+  transform: scale(1.2);
+}
+
+.skill-tile:hover span {
+  color: var(--text-primary);
+}
+
+/* Currently learning tiles */
+.skill-tile.learning {
+  border-style: dashed;
+  opacity: 0.75;
+}
+
+.skill-tile.learning:hover {
+  opacity: 1;
 }
 
 .skill-group-learning {
