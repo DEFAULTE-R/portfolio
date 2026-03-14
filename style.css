@@ -279,6 +279,10 @@ section {
 .typewriter-cursor {
   display: inline-block;
   color: var(--accent);
+  animation: none;
+}
+
+.typewriter-cursor.blinking {
   animation: blink 1s step-end infinite;
 }
 
