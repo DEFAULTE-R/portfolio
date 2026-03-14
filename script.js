@@ -196,19 +196,16 @@ if (typewriterText) {
   // Only run cursor logic if fine pointer (mouse) is present
   if (window.matchMedia("(pointer: fine)").matches) {
     
-    window.addEventListener("mousemove", (e) => {
-      const posX = e.clientX;
-      const posY = e.clientY;
+   window.addEventListener("mousemove", (e) => {
+  const posX = e.clientX;
+  const posY = e.clientY;
 
-      // Update dot immediately
-      cursorDot.style.left = `${posX}px`;
-      cursorDot.style.top = `${posY}px`;
-
-      // Outline follows via CSS transition 
-      // (The translate is handled in CSS, so we just set top/left)
-      cursorOutline.style.left = `${posX}px`;
-      cursorOutline.style.top = `${posY}px`;
-    });
+  cursorDot.style.left = `${posX}px`;
+  cursorDot.style.top = `${posY}px`;
+  cursorOutline.style.left = `${posX}px`;
+  cursorOutline.style.top = `${posY}px`;
+  cursorOutline.style.opacity = '1'; 
+});
 
     // Hover effect on links and buttons
     const interactiveElements = document.querySelectorAll("a, button, .filter-tab, .contact-card");
