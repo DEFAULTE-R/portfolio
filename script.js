@@ -71,54 +71,63 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach(sec => observer.observe(sec));
 
   // --- HERO TYPEWRITER EFFECT ---
-  const phrases = [
-    "Engineering Systems Builder",
-    "Mechanical Engineer",
-    "Edge AI & IoT Developer",
-    "Simulation & CFD Automation"
-  ];
-  
-  const typewriterText = document.getElementById("typewriter-text");
-  
-  if (typewriterText) {
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typingSpeed = 100;
+// --- HERO TYPEWRITER EFFECT ---
+const phrases = [
+  "Systems builder",
+  "ME student · Saveetha Engineering College",
+  "Edge ML · CFD · Deployed tools"
+];
 
-    function typeEffect() {
-      const currentPhrase = phrases[phraseIndex];
+const typewriterText = document.getElementById("typewriter-text");
+const typewriterCursor = document.querySelector(".typewriter-cursor");
 
-      if (isDeleting) {
-        // Remove char
-        typewriterText.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50; // Delete faster
-      } else {
-        // Add char
-        typewriterText.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100; // Type slower
-      }
+if (typewriterText) {
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
 
-      // If finished typing phrase, pause and then delete
-      if (!isDeleting && charIndex === currentPhrase.length) {
-        typingSpeed = 2000; // Pause at end of phrase
-        isDeleting = true;
-      } 
-      // If finished deleting, move to next phrase
-      else if (isDeleting && charIndex === 0) {
+  function setCursorBlink(blinking) {
+    if (typewriterCursor) {
+      typewriterCursor.classList.toggle("blinking", blinking);
+    }
+  }
+
+  function typeEffect() {
+    const currentPhrase = phrases[phraseIndex];
+
+    if (isDeleting) {
+      charIndex--;
+      typewriterText.textContent = currentPhrase.substring(0, charIndex);
+      if (charIndex === 0) {
         isDeleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Pause before typing next phrase
+        setCursorBlink(true);
+        setTimeout(typeEffect, 400);
+        return;
       }
-
-      setTimeout(typeEffect, typingSpeed);
+      setCursorBlink(false);
+      setTimeout(typeEffect, 35);
+    } else {
+      charIndex++;
+      typewriterText.textContent = currentPhrase.substring(0, charIndex);
+      if (charIndex === currentPhrase.length) {
+        setCursorBlink(true);
+        setTimeout(() => {
+          isDeleting = true;
+          setCursorBlink(false);
+          setTimeout(typeEffect, 35);
+        }, 1800);
+        return;
+      }
+      setCursorBlink(false);
+      setTimeout(typeEffect, 70);
     }
-
-    // Start typewriter
-    setTimeout(typeEffect, 1000); // 1s initial delay to let entrance animations finish
   }
+
+  setCursorBlink(true);
+  setTimeout(typeEffect, 1000);
+}
+
 
   // --- PROJECTS FILTERING ---
   const filterTabs = document.querySelectorAll(".filter-tab");
