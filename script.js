@@ -15,11 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- HERO PARALLAX ---
   const heroDots = document.querySelector('.hero-bg-dots');
-  if (heroDots && !prefersReducedMotion) {
+  if (heroDots) {
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        heroDots.style.transform = `scale(2) translate(${scrollY * 0.015}px, ${scrollY * 0.025}px)`;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          if (scrollY < window.innerHeight * 1.2) {
+            heroDots.style.transform = `scale(2) translate(${scrollY * 0.012}px, ${scrollY * 0.02}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     }, { passive: true });
   }
@@ -177,6 +184,38 @@ if (typewriterText) {
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   projectCards.forEach(card => cardObserver.observe(card));
+
+  // --- MAGNETIC CARD HOVER ---
+  const projectCardEls = document.querySelectorAll('.project-card');
+  projectCardEls.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const tiltX = (y / rect.height) * 6;
+      const tiltY = -(x / rect.width) * 6;
+      card.style.transform = `translateY(-3px) perspective(600px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      card.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      setTimeout(() => { card.style.transition = ''; }, 400);
+    });
+  });
+
+  // --- CONTACT CARD GLOW ---
+  const contactCards = document.querySelectorAll('.contact-card');
+  contactCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(245,166,35,0.08) 0%, #111827 60%)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.background = '';
+    });
+  });
 
   // --- SCROLL REVEAL ---
   const revealEls = document.querySelectorAll('.reveal');
