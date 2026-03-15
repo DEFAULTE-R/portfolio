@@ -11,6 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // --- HERO PARALLAX ---
+  const heroDots = document.querySelector('.hero-bg-dots');
+  if (heroDots && !prefersReducedMotion) {
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (scrollY < window.innerHeight) {
+        heroDots.style.transform = `scale(2) translate(${scrollY * 0.015}px, ${scrollY * 0.025}px)`;
+      }
+    }, { passive: true });
+  }
+
   // --- MOBILE MENU TOGGLE ---
   const hamburger = document.querySelector(".nav-hamburger");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -152,42 +165,30 @@ if (typewriterText) {
   });
 
   // --- CARD SCROLL ANIMATION ---
-  const cardObserverOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-  };
-  
   const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
+        setTimeout(() => {
+          entry.target.classList.add("is-visible");
+        }, prefersReducedMotion ? 0 : i * 80);
         cardObserver.unobserve(entry.target);
       }
     });
-  }, cardObserverOptions);
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   projectCards.forEach(card => cardObserver.observe(card));
 
-  // --- SCROLL REVEAL FOR SECTIONS ---
-  const revealElements = document.querySelectorAll(
-    '.about-grid, .skills-wrapper, .skill-group, .roles-list, .achievement-card, .contact-card, #footer p'
-  );
-
-  const revealObserver = new IntersectionObserver((entries) => {
+  // --- SCROLL REVEAL ---
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('reveal-visible');
-        revealObserver.unobserve(entry.target);
+        entry.target.classList.add('is-visible');
+        revealObs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-  revealElements.forEach((el) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    revealObserver.observe(el);
-  });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
 
   // --- CUSTOM CURSOR ---
   const cursorDot = document.getElementById("cursor-dot");
