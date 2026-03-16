@@ -90,6 +90,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(sec => observer.observe(sec));
 
+  // --- SECTION CROSSFADE ---
+  const allSections = document.querySelectorAll('section');
+  const crossfadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        allSections.forEach(s => s.classList.add('section-dim'));
+        entry.target.classList.remove('section-dim');
+      }
+    });
+  }, { threshold: 0.3 });
+  if (!prefersReducedMotion) {
+    allSections.forEach(s => crossfadeObs.observe(s));
+  }
+
   // --- HERO TYPEWRITER EFFECT ---
 // --- HERO TYPEWRITER EFFECT ---
 const phrases = [
@@ -217,12 +231,35 @@ if (typewriterText) {
     });
   });
 
+  // --- TEXT SPLIT STAGGER ---
+  function splitAndAnimate(selector) {
+    const els = document.querySelectorAll(selector);
+    els.forEach(el => {
+      const words = el.textContent.trim().split(' ');
+      el.innerHTML = words.map((word, i) =>
+        `<span class="word-wrap"><span class="word" style="transition-delay:${i * 0.04}s">${word}</span></span>`
+      ).join(' ');
+    });
+  }
+  splitAndAnimate('.hero-name');
+  splitAndAnimate('.section-header h2');
+
+  setTimeout(() => {
+    document.querySelectorAll('.hero-name .word').forEach(w => {
+      w.classList.add('word-visible');
+    });
+  }, 100);
+
   // --- SCROLL REVEAL ---
   const revealEls = document.querySelectorAll('.reveal');
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+        // Trigger word animations inside section headers
+        entry.target.querySelectorAll('.word').forEach(w => {
+          w.classList.add('word-visible');
+        });
         revealObs.unobserve(entry.target);
       }
     });
