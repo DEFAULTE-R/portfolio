@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- HERO TYPEWRITER EFFECT ---
 const phrases = [
   "Systems builder",
-  "ME student · Saveetha Engineering College",
+  "Mechanical Engineering Undergrad",
   "Edge ML · CFD · Deployed tools"
 ];
 
