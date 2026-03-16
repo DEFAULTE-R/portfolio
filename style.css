@@ -64,7 +64,7 @@ section.section-dim {
 /* Desktop overrides at 768px+ */
 @media (min-width: 768px) {
   section {
-    padding: 6rem 3rem; /* Desktop spacing placeholder */
+    padding: 9rem 4rem; /* Desktop spacing placeholder */
   }
 }
 
@@ -260,7 +260,7 @@ section.section-dim {
 
 .hero-name {
   font-family: 'Playfair Display', serif;
-  font-size: 44px;
+  font-size: 56px;
   color: var(--text-primary);
   letter-spacing: -1px;
   margin-bottom: 0.5rem;
@@ -299,7 +299,7 @@ section.section-dim {
 .hero-bio {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text-muted);
   max-width: 560px;
   line-height: 1.6;
@@ -353,14 +353,15 @@ section.section-dim {
 
 @media (min-width: 768px) {
   .hero-name {
-    font-size: 72px;
+    font-size: 96px;
   }
   .hero-typewriter {
-    font-size: 22px;
+    font-size: 18px;
     height: 32px;
   }
   .hero-bio {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 400;
   }
   .hero-content {
     padding: 0;
@@ -375,7 +376,7 @@ section.section-dim {
 }
 
 .section-header {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .section-label {
@@ -386,7 +387,7 @@ section.section-dim {
   letter-spacing: 3px;
   transition: letter-spacing 0.4s ease;
   color: var(--accent);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .section-label.is-visible {
@@ -400,7 +401,7 @@ section.section-dim {
 
 @media (min-width: 768px) {
   .section-header h2 {
-    font-size: 40px;
+    font-size: 52px;
   }
 }
 
@@ -453,8 +454,9 @@ section.section-dim {
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   display: flex;
   flex-direction: column;
   transition: all 0.25s ease;
@@ -762,8 +764,9 @@ section.section-dim {
   flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 28px 24px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   text-align: left;
   transition: all 0.25s ease;
 }
@@ -830,9 +833,10 @@ section.section-dim {
   flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 28px 24px;
   text-align: left;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
   display: flex;
   align-items: center;
   gap: 16px;
