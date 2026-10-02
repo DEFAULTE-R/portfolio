@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0A0E1A">
+  <meta name="description" content="Hari L — Mechanical Engineering student focused on mechanical design, simulation, manufacturing, robotics and industrial R&D.">
+  <meta property="og:title" content="Hari L · Mechanical Engineering Portfolio">
+  <meta property="og:description" content="Hari L — B.E. Mechanical Engineering undergraduate focused on mechanical design, CAE, additive manufacturing, robotics and industrial R&D. Seeking mechanical / CAE / design / R&D internships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://defaulte-r.github.io/portfolio/">
+  <meta property="og:image" content="https://defaulte-r.github.io/portfolio/assets/engineering/amr/hero-amr.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hari L · Mechanical Engineering Portfolio">
+  <meta name="twitter:description" content="Mechanical design, CAE, additive manufacturing, robotics and industrial R&D.">
+  <meta name="twitter:image" content="https://defaulte-r.github.io/portfolio/assets/engineering/amr/hero-amr.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Hari L - Mechanical Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-eyebrow{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;color:var(--accent-cyan);text-transform:uppercase;margin-bottom:1rem}
+    .hero-scope{font-family:var(--font-mono);letter-spacing:.04em;color:var(--accent-amber);font-size:.9rem;margin-top:1rem}
+    .pipeline{display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;margin:2rem 0 3rem}
+    .pipeline-step{border:1px solid rgba(148,163,184,.18);background:rgba(17,24,39,.65);padding:1rem .75rem;position:relative}
+    .pipeline-step:not(:last-child)::after{content:'→';position:absolute;right:-.62rem;top:50%;transform:translateY(-50%);color:var(--accent-amber);z-index:2;font-family:var(--font-mono)}
+    .pipeline-num{font-family:var(--font-mono);font-size:.65rem;color:var(--accent-cyan);display:block;margin-bottom:.45rem}
+    .pipeline-name{font-weight:600;font-size:.82rem}
+    .section-note{max-width:850px;color:#94a3b8;margin:-1rem 0 2rem}
+    .project-card .card-desc strong,.case-box strong{color:#f8fafc}
+    .status-note{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.04em;color:#94a3b8;margin-top:.75rem}
+    .case-role{margin:.2rem 0 1rem;color:var(--accent-cyan);font-family:var(--font-mono);font-size:.76rem}
+    .case-links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+    .archive{margin-top:1.5rem}
+    .archive summary{cursor:pointer;font-family:var(--font-mono);font-size:.78rem;color:var(--accent-cyan);letter-spacing:.05em;padding:.8rem 0}
+    .archive ul{margin:0;padding:0;list-style:none;border-top:1px solid rgba(148,163,184,.14)}
+    .archive li{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:.9rem 0;border-bottom:1px solid rgba(148,163,184,.1);font-size:.88rem}
+    .archive li div{display:flex;flex-direction:column;gap:.2rem}.archive li span{color:#94a3b8;font-size:.78rem}.archive li em{font-style:normal;color:#64748b;font-family:var(--font-mono);font-size:.68rem;white-space:nowrap}.archive li a{font-size:.7rem;color:var(--accent-cyan)}
+    .source-disclaimer{font-size:.68rem;color:#64748b;margin-top:1rem;font-family:var(--font-mono)}
+    @media(max-width:900px){.pipeline{grid-template-columns:repeat(3,1fr)}.pipeline-step:nth-child(3)::after{display:none}}
+    @media(max-width:560px){.pipeline{grid-template-columns:1fr 1fr}.pipeline-step::after{display:none!important}.archive li{grid-template-columns:1fr}.archive li em{white-space:normal}}
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-logo">HL</div>
+    <div class="nav-links desktop-only">
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#case-studies" class="nav-link">Case Studies</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <button class="nav-hamburger mobile-only" aria-label="Menu">☰</button>
+  </nav>
+
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <div class="mobile-nav-links">
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#case-studies" class="mobile-nav-link">Case Studies</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#achievements" class="mobile-nav-link">Achievements</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+  </div>
+
+  <main>
+    <section id="hero" class="hero-v6">
+      <div class="hero-v6-grid"></div>
+      <div class="hero-v6-axes" aria-hidden="true"><span>X</span><span>Y</span><span>Z</span></div>
+      <div class="hero-v6-content hero-v6-simple">
+        <div class="hero-v6-copy">
+          <div class="hero-eyebrow">MECHANICAL ENGINEERING · CAD · CAE · ROBOTICS</div>
+          <h1 class="hero-name">Hari L</h1>
+          <h2 class="hero-static-title">B.E. Mechanical Engineering Undergraduate</h2>
+          <p class="hero-intent"><strong>Seeking mechanical / CAE / design / R&amp;D internships.</strong></p>
+          <p class="hero-meta">Saveetha Engineering College · Chennai · 2025–2029</p>
+          <p class="hero-scope">Mechanical Design · Simulation · Manufacturing · Robotics · Industrial Systems</p>
+          <p class="hero-bio">I design and validate mechanical systems through <strong>CAD → simulation → optimization → physical prototyping</strong>, using computation where it makes engineering faster, safer or more repeatable.</p>
+          <div class="hero-v6-actions">
+            <a href="#projects" class="hero-v6-primary">Explore engineering work <span>↓</span></a>
+            <a href="assets/Hari_L_Resume_2026.pdf" target="_blank" rel="noopener noreferrer" class="hero-v6-secondary">View resume ↗</a>
+            <a href="#contact" class="hero-v6-secondary">Contact ↗</a>
+          </div>
+          <div class="hero-v6-status"><i></i><span>AVAILABILITY</span><b>YEAR-ROUND · 24/7</b></div>
+        </div>
+
+        <div class="hero-v6-artifact hero-amr-only" id="hero-v6-artifact">
+          <div class="artifact-toolbar"><span><i></i> REAL ENGINEERING ARTIFACT</span><span>AMR · PARAMETRIC PLATFORM</span></div>
+          <div class="artifact-stage">
+            <div class="artifact-crosshair c1"></div><div class="artifact-crosshair c2"></div><div class="artifact-crosshair c3"></div><div class="artifact-crosshair c4"></div>
+            <div class="artifact-measure measure-a"><span>4WD PLATFORM</span><i></i></div>
+            <div class="artifact-measure measure-b"><span>MODULAR PAYLOAD</span><i></i></div>
+            <img id="hero-v6-image" src="assets/engineering/amr/hero-amr-transparent.png" alt="Actual AMR robotic assembly from the SIH 2026 project">
+            <div class="artifact-floor"></div>
+            <div class="artifact-cursor-note">REAL PROJECT ASSET · FUSION 360 EVIDENCE</div>
+          </div>
+          <div class="artifact-bottom">
+            <div class="artifact-spec"><b>73.3%</b><span>BASE MASS REDUCTION</span></div>
+            <div class="artifact-spec"><b>2.312</b><span>SAFETY FACTOR</span></div>
+            <div class="artifact-spec"><b>490.5 N</b><span>APPLIED LOAD</span></div>
+          </div>
+          <div class="artifact-source">SMART SYNERGY · SIH 2026 · FUSION 360</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">01</span><h2>Selected Engineering Work</h2></div>
+        <p class="section-note reveal">The featured set is intentionally compact. Each project demonstrates a different part of the engineering workflow — physical systems, CAE, manufacturing, robotics, embedded monitoring or industrial software.</p>
+
+        <div class="pipeline reveal">
+          <div class="pipeline-step"><span class="pipeline-num">01</span><span class="pipeline-name">FORMULATE</span></div>
+          <div class="pipeline-step"><span class="pipeline-num">02</span><span class="pipeline-name">MODEL</span></div>
+          <div class="pipeline-step"><span class="pipeline-num">03</span><span class="pipeline-name">SIMULATE</span></div>
+          <div class="pipeline-step"><span class="pipeline-num">04</span><span class="pipeline-name">OPTIMIZE</span></div>
+          <div class="pipeline-step"><span class="pipeline-num">05</span><span class="pipeline-name">BUILD</span></div>
+          <div class="pipeline-step"><span class="pipeline-num">06</span><span class="pipeline-name">VALIDATE</span></div>
+        </div>
+
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All</button>
+          <button class="filter-tab" data-filter="mechanical">Mechanical Design</button>
+          <button class="filter-tab" data-filter="simulation">Simulation &amp; CAE</button>
+          <button class="filter-tab" data-filter="monitoring">Monitoring &amp; Diagnostics</button>
+          <button class="filter-tab" data-filter="robotics">Robotics &amp; Tools</button>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card" data-tag="monitoring">
+            <div class="card-top"><span class="card-badge badge-gold">🏆 Top 30 · 1,500+ teams</span><span class="card-tag">Monitoring</span><span class="card-date">2026</span></div>
+            <h3 class="card-title">OILIQ — Engine Oil Condition Monitoring</h3>
+            <div class="project-visual dashboard-mini" data-oiliq-mini><div class="mini-title">OILIQ · EDGE HEALTH</div><div class="mini-bars"><i style="--v:72%"></i><i style="--v:54%"></i><i style="--v:43%"></i><i style="--v:68%"></i></div><div class="mini-readouts"><span>TEMP <b>82°C</b></span><span>SOOT <b>61%</b></span><span>OXID. <b>43%</b></span><span>TBN <b>3.8</b></span></div></div>
+            <p class="card-desc">Software-only condition-monitoring prototype modelling temperature, soot, oxidation and TBN signals with Normal / Caution / Critical classification and fault-escalation logic at reported sub-5 ms processing latency.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Signal-processing pipeline, condition classification, fault-escalation logic and software-side latency validation.</p>
+            <div class="card-stack"><span class="stack-pill">Software Pipeline</span><span class="stack-pill">Condition Monitoring</span><span class="stack-pill">Classification</span><span class="stack-pill">Edge Logic</span></div>
+          </div>
+
+          <div class="project-card" data-tag="monitoring">
+            <div class="card-top"><span class="card-badge badge-gold">🏆 National Finalist · Top 15 / 300+</span><span class="card-tag">Monitoring + CAE</span><span class="card-date">2026</span></div>
+            <h3 class="card-title">ASME Brain Bolt 2026 — Predictive Maintenance &amp; Welding Distortion</h3>
+            <div class="project-visual image-mini"><img src="assets/engineering/bevpl/ansys-contour.jpg" alt="ANSYS pressure vessel simulation result" loading="lazy" decoding="async"><span>ANSYS · THERMAL-STRUCTURAL</span></div>
+            <p class="card-desc">Qualified through South Regionals to the ASME IMECE Brain Bolt 2026 National Finale. The team worked on pressure-vessel welding distortion using analytical shrinkage modelling and ANSYS thermal-structural analysis.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Analytical distortion modelling, ANSYS validation workflow and design-report integration.</p>
+            <div class="card-stack"><span class="stack-pill">ESP32-S3</span><span class="stack-pill">ADXL355</span><span class="stack-pill">PT100</span><span class="stack-pill">ANSYS</span></div>
+          </div>
+
+          <div class="project-card" data-tag="mechanical">
+            <div class="card-top"><span class="card-badge badge-blue">📌 SIH 2026 Selected</span><span class="card-tag">Mechanical Design</span><span class="card-date">2026</span></div>
+            <h3 class="card-title">Robotic Assembly for Additive Manufacturing</h3>
+            <div class="project-visual cad-mini"><div class="cad-shape"><span></span><span></span><span></span></div><div><strong>FUSION 360</strong><small>PARAMETRIC · GENERATIVE · FEA · DFAM</small></div></div>
+            <p class="card-desc">Robotic mechanical assembly developed in Fusion 360 using parametric modelling, Generative Design, structural FEA and DfAM. A 0.25× FDM prototype was fabricated for physical validation and judging.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Mechanical CAD, simulation-driven design iteration, optimization for FDM and physical prototype fabrication.</p>
+            <div class="card-stack"><span class="stack-pill">Fusion 360</span><span class="stack-pill">Generative Design</span><span class="stack-pill">FEA</span><span class="stack-pill">DfAM</span><span class="stack-pill">FDM</span></div>
+          </div>
+
+          <div class="project-card" data-tag="robotics">
+            <div class="card-top"><span class="card-badge badge-blue">🛡️ Safety Digital Twin</span><span class="card-tag">Robotics</span><span class="card-date">2026</span></div>
+            <h3 class="card-title">SafeSense 3D — Adaptive Safety Twin</h3>
+            <div class="project-visual safesense-mini"><div class="zone"><span></span></div><div class="arrow">d → d_safe</div><div class="mini-data"><span>STOP <b>v²/2a</b></span><span>TTC <b>0.59s</b></span><span>CONF <b>0.55</b></span></div></div>
+            <p class="card-desc">Digital safety-twin prototype combining virtual LiDAR, thermal cues, sensor confidence, stopping distance, reaction distance and an uncertainty-aware protective envelope for automated machinery.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Developed the deterministic simulation logic, confidence handling and adaptive safety-envelope decision flow.</p>
+            <div class="card-stack"><span class="stack-pill">Virtual LiDAR</span><span class="stack-pill">TTC</span><span class="stack-pill">Uncertainty</span><span class="stack-pill">Digital Twin</span></div>
+            <p class="status-note">Simulation prototype · no physical sensor data claimed</p>
+          </div>
+
+          <div class="project-card" data-tag="robotics">
+            <div class="card-top"><span class="card-badge badge-green">🔬 Open Source</span><span class="card-tag">Robotics &amp; Tools</span><span class="card-date">2025–Present</span></div>
+            <h3 class="card-title">dora-rs Open-Source Contributions</h3>
+            <p class="card-desc">Contributed to the dora-rs robotics framework through observability instrumentation and TFLite hardware-inference integration.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Approximately 861 LOC contributed across observability and hardware-inference work.</p>
+            <div class="card-stack"><span class="stack-pill">dora-rs</span><span class="stack-pill">OpenTelemetry</span><span class="stack-pill">SigNoz</span><span class="stack-pill">TFLite</span></div>
+          </div>
+
+          <div class="project-card" data-tag="robotics">
+            <div class="card-top"><span class="card-badge badge-amber">🛠 Simulation Framework</span><span class="card-tag">Robotics &amp; Tools</span><span class="card-date">2026</span></div>
+            <h3 class="card-title">AMR Fleet Simulation</h3>
+            <div class="project-visual amr-mini"><i class="amr-dot"></i><i class="amr-dot"></i><i class="amr-dot"></i><i class="amr-dot"></i><span class="amr-label">UDP · MULTIPROCESS · SCENARIOS</span></div>
+            <p class="card-desc">Multi-robot fleet simulator covering normal operation, blockage, robot failure, communication loss and stress scenarios. Extended to independent robot processes with UDP messaging, JSON packet serialization and packet-loss handling.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Fleet simulation architecture, scenario handling, multi-process AMR workers and UDP transport / packet-loss behaviour.</p>
+            <div class="card-stack"><span class="stack-pill">Python</span><span class="stack-pill">Multiprocessing</span><span class="stack-pill">UDP</span><span class="stack-pill">Scenario Testing</span></div>
+          </div>
+
+          <div class="project-card" data-tag="robotics">
+            <div class="card-top"><span class="card-badge badge-blue">🧰 Industrial Tooling</span><span class="card-tag">Robotics &amp; Tools</span><span class="card-date">2026</span></div>
+            <h3 class="card-title">CAD Validator, Fleet Dashboard &amp; Audit Trail</h3>
+            <p class="card-desc">A small industrial tooling suite: CAD pre-checks for thin walls and geometric inconsistencies, multi-unit health scoring and alerts, plus structured event logging for root-cause analysis and corrective-action records.</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Designed the validation rules, health-state logic and structured audit-event flow.</p>
+            <div class="card-stack"><span class="stack-pill">Python</span><span class="stack-pill">CAD Validation</span><span class="stack-pill">Dashboards</span><span class="stack-pill">Audit Logs</span></div>
+          </div>
+        </div>
+
+        <details class="archive reveal">
+          <summary>Earlier / exploratory work (2025–2026)</summary>
+          <ul>
+            <li><div><strong>ASME BrainBolt 2025 — CFD Sprint</strong><span>Finalist at HICC Hyderabad; PyFluent automation work for engineering CFD workflows.</span></div><em>Sep 2025</em></li>
+            <li><div><strong>Kayak Paddle Optimization</strong><span>SIH 2025 selected; Fusion 360 Generative Design with biomechanical force analysis.</span></div><em>Oct 2025</em></li>
+            <li><div><strong>Gramin Guard</strong><span>Offline-first edge monitoring concept for rural cold storage on Raspberry Pi Zero.</span></div><em>Dec 2025</em><a href="https://defaulte-r.github.io/Garmin-Guard/" target="_blank" rel="noopener noreferrer">Project ↗</a></li>
+            <li><div><strong>RBI Risk Prioritization Tool</strong><span>Deterministic, auditable inspection prioritization for refinery pressure vessels.</span></div><em>Jan 2026</em><a href="https://github.com/DEFAULTE-R/rbi-risk-prioritization/tree/main" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://rbi-risk-prioritization.streamlit.app" target="_blank" rel="noopener noreferrer">Live ↗</a></li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+
+
+    <section id="engineering-motion" class="engineering-motion-section">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">02</span><h2>Engineering, in motion.</h2></div>
+        <p class="section-note reveal">Scroll through three documented systems. The visual stage stays fixed while the engineering story changes.</p>
+        <div class="motion-rail">
+          <div class="motion-visual-wrap">
+            <div class="motion-visual" id="motion-visual">
+              <div class="motion-visual-top"><span id="motion-visual-kicker">CASE 01 · CAE</span><span id="motion-visual-index">01 / 03</span></div>
+              <div class="motion-visual-grid"></div>
+              <img id="motion-image" src="assets/engineering/bevpl/ansys-contour.jpg" alt="ANSYS thermal-structural simulation of pressure-vessel welding distortion" loading="lazy" decoding="async">
+              <div class="motion-oiliq-visual" id="motion-oiliq-visual" aria-hidden="true">
+                <div class="oiliq-node oiliq-sensors"><span>SIGNALS</span><b>TEMP · SOOT · OXID. · TBN</b></div>
+                <div class="oiliq-arrow">→</div>
+                <div class="oiliq-node"><span>SOFTWARE PIPELINE</span><b>FILTER · CLASSIFY · ESCALATE</b></div>
+                <div class="oiliq-arrow">→</div>
+                <div class="oiliq-node"><span>LOCAL DECISION</span><b>NORMAL · CAUTION · CRITICAL</b></div>
+              </div>
+              <div class="motion-visual-caption"><strong id="motion-visual-title">Welding distortion</strong><span id="motion-visual-subtitle">THERMAL-STRUCTURAL SIMULATION</span></div>
+              <div class="motion-visual-stat"><b id="motion-visual-stat">80.6%</b><span id="motion-visual-stat-label">REPORTED BASELINE AGREEMENT</span></div>
+            </div>
+          </div>
+          <div class="motion-story" id="motion-story">
+            <article class="motion-story-card is-active" data-motion="bevpl">
+              <span class="motion-index">01</span><span class="motion-kicker">THERMAL-STRUCTURAL FEA</span>
+              <h3>Model the distortion before the vessel reaches the shop floor.</h3>
+              <p>Analytical shrinkage modelling was cross-validated against an ANSYS thermal-structural model. The reported baseline comparison was 80.6% agreement before calibration.</p>
+              <div class="motion-stats"><span><b>1.41 → 0.96</b><small>KJ/MM HEAT INPUT</small></span><span><b>31.8%</b><small>PREDICTED REDUCTION</small></span></div>
+              <div class="motion-proof">MODEL RESULT · NOT SHOP-FLOOR MEASUREMENT</div>
+            </article>
+            <article class="motion-story-card" data-motion="safesense">
+              <span class="motion-index">02</span><span class="motion-kicker">SAFESENSE 3D · DIGITAL SAFETY TWIN</span>
+              <h3>Make the safety envelope respond to uncertainty—not ignore it.</h3>
+              <p>Speed, confidence and time-to-collision drive an interpretable protective envelope. Uncertainty can expand the safety margin, but never reduce the deterministic safety floor.</p>
+              <div class="motion-stats"><span><b>d_safe</b><small>d_stop + d_reaction + d_uncertainty</small></span><span><b>0.59 s</b><small>IMMINENT TTC EXAMPLE</small></span></div>
+              <div class="motion-proof">DETERMINISTIC PHYSICS SIMULATION · NO PHYSICAL SENSOR DATA CLAIMED</div>
+            </article>
+            <article class="motion-story-card" data-motion="oiliq">
+              <span class="motion-index">03</span><span class="motion-kicker">OILIQ · SOFTWARE-ONLY PROTOTYPE</span>
+              <h3>Turn multiple oil-health signals into a local maintenance decision.</h3>
+              <p>A software pipeline models temperature, soot, oxidation and TBN signals, then classifies equipment condition as Normal, Caution or Critical with local fault-escalation logic.</p>
+              <div class="motion-stats"><span><b>&lt;5 ms</b><small>REPORTED PROCESSING LATENCY</small></span><span><b>3 STATES</b><small>NORMAL · CAUTION · CRITICAL</small></span></div>
+              <div class="motion-proof">SOFTWARE-ONLY SYSTEM · NO HARDWARE PHOTO OR PHYSICAL RIG CLAIMED</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="engineering-lab" class="engineering-lab-section">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">03</span><h2>Interactive Engineering Lab</h2></div>
+        <p class="section-note reveal">Small engineering systems you can manipulate instead of only reading about. Values and states are labelled as simulations or design studies where applicable.</p>
+
+        <div class="lab-grid">
+          <article class="lab-panel lab-sih reveal">
+            <div class="lab-panel-head"><div><span class="case-label">SIH 2026 · FUSION 360</span><h3>From CAD to DfAM</h3></div><span class="lab-status">DESIGN STUDY</span></div>
+            <div class="sih-stage" id="sih-stage">
+              <div class="sih-grid"></div>
+              <div class="sih-assembly" aria-hidden="true">
+                <div class="sih-base"></div><div class="sih-link link-a"></div><div class="sih-link link-b"></div><div class="sih-joint joint-a"></div><div class="sih-joint joint-b"></div><div class="sih-end"></div>
+              </div>
+              <div class="sih-overlay"><span id="sih-mode-label">PARAMETRIC CAD</span><small id="sih-mode-copy">Fusion 360 · mechanical assembly concept</small></div>
+            </div>
+            <div class="lab-controls" role="tablist" aria-label="SIH design views">
+              <button class="lab-tab active" data-sih-mode="cad">CAD</button>
+              <button class="lab-tab" data-sih-mode="generative">GENERATIVE</button>
+              <button class="lab-tab" data-sih-mode="fea">FEA</button>
+              <button class="lab-tab" data-sih-mode="dfam">DFAM</button>
+            </div>
+            <div class="lab-readout"><span>Prototype scale <b>0.25×</b></span><span>Workflow <b>CAD → FEA → DFAM → FDM</b></span></div>
+          </article>
+
+          <article class="lab-panel lab-amr reveal">
+            <div class="lab-panel-head"><div><span class="case-label">AMR FLEET SIMULATION</span><h3>Watch the fleet react</h3></div><span class="lab-status">SIMULATION</span></div>
+            <div class="amr-stage"><canvas id="amr-canvas" aria-label="Interactive AMR fleet simulation"></canvas><div class="amr-hud"><span>SCENARIO <b id="amr-scenario">NORMAL</b></span><span>ROBOTS <b>04</b></span><span>TRANSPORT <b id="amr-transport">UDP</b></span></div></div>
+            <div class="lab-controls" role="tablist" aria-label="AMR simulation scenarios">
+              <button class="amr-tab active" data-amr-scenario="normal">NORMAL</button>
+              <button class="amr-tab" data-amr-scenario="blockage">BLOCKAGE</button>
+              <button class="amr-tab" data-amr-scenario="failure">FAILURE</button>
+              <button class="amr-tab" data-amr-scenario="comm_loss">COMM LOSS</button>
+              <button class="amr-tab" data-amr-scenario="stress">STRESS</button>
+            </div>
+            <div class="lab-readout"><span>Architecture <b>1 process / AMR</b></span><span>Transport <b>JSON over UDP</b></span></div>
+          </article>
+
+          <article class="lab-panel lab-safety reveal">
+            <div class="lab-panel-head"><div><span class="case-label">SAFESENSE 3D</span><h3>Protective envelope</h3></div><span class="lab-status">PHYSICS MODEL</span></div>
+            <div class="safety-lab-visual"><div class="safety-lab-rings"></div><div class="safety-lab-machine"></div><div class="safety-lab-person"></div><div class="safety-lab-line"></div><span class="safety-lab-label">d_safe = d_stop + d_reaction + d_uncertainty</span></div>
+            <div class="lab-readout three"><span>STOP <b>v² / 2a</b></span><span>UNCERTAINTY <b>↑ confidence ↓</b></span><span>DECISION <b>TTC + risk</b></span></div>
+            <p class="lab-footnote">Deterministic simulation; no physical sensor data claimed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section id="amr-evidence" class="amr-v6-section">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">04</span><h2>AMR — From Digital Model to Fleet</h2></div>
+        <p class="section-note reveal">The AMR is presented as an engineering sequence: design the platform, optimize the structure, validate the load case, then connect the physical system to a fleet-level simulation.</p>
+
+        <div class="amr-v6-stage reveal">
+          <div class="amr-v6-stage-media">
+            <div class="amr-v6-media-frame">
+              <div class="amr-v6-media-top"><span>SIH 2026 / AMR</span><b id="amr-v5-view-label">01 · PARAMETRIC CAD</b></div>
+              <div class="amr-v6-media-grid"></div>
+              <img id="amr-v5-image" src="assets/engineering/amr/hero-amr-transparent.png" alt="Actual AMR robotic assembly designed in Fusion 360" loading="lazy">
+              <div class="amr-v6-media-bottom"><span id="amr-v6-image-ratio">1042 × 648 · 1.61:1</span><span>ACTUAL PROJECT ASSET</span></div>
+            </div>
+          </div>
+          <div class="amr-v6-stage-copy">
+            <span class="case-label">SMART SYNERGY · SIH26112</span>
+            <h3 id="amr-v6-title">01 / Parametric CAD</h3>
+            <p id="amr-v5-copy">The actual AMR assembly: a modular mobile platform with the robotic arm and end-effector mounted as one system.</p>
+            <div class="amr-v6-metrics">
+              <div><b>73.3%</b><span>base mass reduction</span></div>
+              <div><b>5.98 → 1.60 kg</b><span>base mass study</span></div>
+              <div><b>2.312</b><span>safety factor</span></div>
+              <div><b>490.5 N</b><span>applied load</span></div>
+            </div>
+            <div class="amr-v6-tabs" role="tablist" aria-label="AMR engineering evidence views">
+              <button class="amr-v5-tab active" data-amr-view="cad">01 CAD</button>
+              <button class="amr-v5-tab" data-amr-view="generative">02 GENERATIVE</button>
+              <button class="amr-v5-tab" data-amr-view="fea">03 FEA</button>
+              <button class="amr-v5-tab" data-amr-view="prototype">04 PROTOTYPE</button>
+            </div>
+            <div class="amr-v6-proof"><span id="amr-v6-proof-kicker">DIGITAL DESIGN</span><b id="amr-v6-proof-value">Fusion 360</b><small id="amr-v6-proof-note">Parametric assembly · modular architecture</small><div class="proof-disclosure"><span>PROOF NOTE</span><p id="amr-v6-proof-detail">The project source documents the design workflow and reported outputs. Material / mesh / constraint details are not asserted here unless shown in the source evidence.</p></div></div>
+          </div>
+        </div>
+
+        <div class="amr-v6-sequence reveal">
+          <div class="amr-v6-sequence-head"><span class="case-label">04-STAGE ENGINEERING RECORD</span><span>USE THE TABS ABOVE OR SCROLL THE EVIDENCE</span></div>
+          <div class="amr-v6-evidence-list">
+            <article class="amr-evidence-step active" data-evidence-step="cad">
+              <div class="evidence-step-meta"><span>01</span><b>DESIGN</b><em>PARAMETRIC CAD</em></div>
+              <div class="evidence-step-visual"><img src="assets/engineering/amr/hero-amr-transparent.png" alt="Actual AMR platform CAD assembly" loading="lazy"></div>
+              <div class="evidence-step-copy"><h3>Build the platform around the payload.</h3><p>Modular AMR architecture combining the mobile base, arm and end-effector into one Fusion 360 assembly.</p><div class="step-tags"><span>Fusion 360</span><span>Parametric CAD</span><span>4WD</span></div></div>
+            </article>
+            <article class="amr-evidence-step" data-evidence-step="generative">
+              <div class="evidence-step-meta"><span>02</span><b>OPTIMIZE</b><em>GENERATIVE DESIGN</em></div>
+              <div class="evidence-step-visual"><img src="assets/engineering/amr/image7.png" alt="AMR Fusion generative design evidence" loading="lazy"></div>
+              <div class="evidence-step-copy"><h3>Remove mass without losing the interfaces that matter.</h3><p>The Fusion workflow records the design study and the optimized base geometry used to target a 73.3% reduction in base mass.</p><div class="step-stat"><b>73.3%</b><span>base mass reduction</span></div></div>
+            </article>
+            <article class="amr-evidence-step" data-evidence-step="fea">
+              <div class="evidence-step-meta"><span>03</span><b>VALIDATE</b><em>STRUCTURAL FEA</em></div>
+              <div class="evidence-step-visual"><img src="assets/engineering/amr/image8.png" alt="AMR structural FEA result in Fusion 360" loading="lazy"></div>
+              <div class="evidence-step-copy"><h3>Check the optimized geometry against the load case.</h3><p>Reported project values include a 490.5 N applied load, 0.381 mm displacement and a 2.312 safety factor.</p><div class="step-stat"><b>2.312</b><span>safety factor</span></div></div>
+            </article>
+            <article class="amr-evidence-step" data-evidence-step="prototype">
+              <div class="evidence-step-meta"><span>04</span><b>BUILD</b><em>PHYSICAL PROTOTYPE</em></div>
+              <div class="evidence-step-visual"><img src="assets/engineering/amr/image11.webp" alt="Physical AMR prototype component" loading="lazy"></div>
+              <div class="evidence-step-copy"><h3>Take the digital design into a physical build.</h3><p>The project includes a physical prototype, closing the loop from CAD and analysis to additive manufacturing.</p><div class="step-tags"><span>FDM</span><span>0.25× prototype</span><span>Physical validation</span></div></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="amr-v6-fleet reveal">
+          <div class="amr-v6-fleet-intro"><div><span class="case-label">FROM ONE ROBOT → A FLEET</span><h3>The same real platform, now under system-level stress.</h3><p>Explore the fleet scenarios with the actual AMR asset rather than a generic robot icon.</p></div><div class="fleet-live"><i></i><span>LIVE</span><b id="amr-v5-fleet-state">NORMAL</b></div></div>
+          <div class="amr-v5-fleet-stage amr-v6-fleet-stage"><canvas id="amr-v5-fleet-canvas" aria-label="Interactive AMR fleet using the actual project robot model"></canvas><div class="amr-v6-fleet-overlay"><span>MODEL <b>ACTUAL AMR</b></span><span>EDGE <b>MULTI-PROCESS</b></span><span>TRANSPORT <b id="amr-v5-transport">JSON / UDP</b></span></div></div>
+          <div class="amr-v5-scenario-tabs amr-v6-scenario-tabs" role="tablist" aria-label="AMR fleet scenarios">
+            <button class="active" data-v5-scenario="normal">NORMAL</button><button data-v5-scenario="blockage">AISLE BLOCKAGE</button><button data-v5-scenario="failure">AMR FAILURE</button><button data-v5-scenario="comm_loss">COMM LOSS</button><button data-v5-scenario="stress">FULL STRESS</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="case-studies">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">05</span><h2>Engineering Case Studies</h2></div>
+        <p class="section-note reveal">Longer technical write-ups: problem → approach → analysis → validation → outcome. Measured results, simulation results and concept projections are labelled separately.</p>
+
+        <article class="case-card reveal">
+          <div class="card-top"><span class="card-badge badge-gold">🏆 IMECE India 2026 · National Finalist</span><span class="card-tag">Case Study 01</span><span class="card-date">Aug 2026</span></div>
+          <h3 class="card-title">Prediction &amp; Control of Welding Distortion in Pressure Vessels</h3>
+          <p class="case-role">Team Captain · Robo Rebels · BEVPL problem statement · National Finalist (Top 15 / 300+)</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Led the team workflow, developed the analytical distortion model, worked on the ANSYS thermal-structural validation and integrated the design-report evidence.</p>
+          <div class="case-grid">
+            <div class="case-box"><span class="case-label">The problem</span><p>Weld-induced distortion in pressure vessels can appear as shell ovality, seam peaking and local nozzle deformation. The finalized brief covered a 5 mm SS 316L multi-nozzle shell and a 5 mm SA-516 Gr. 70 longitudinal-seam shell, both 1400 mm ID.</p></div>
+            <div class="case-box"><span class="case-label">The approach</span><p>A four-pillar framework combined low heat-input process selection, pre-weld geometric compensation, a parametric Okerblom-type shrinkage model and post-weld dimensional verification.</p></div>
+            <div class="case-box"><span class="case-label">Simulation &amp; validation</span><p>The analytical tool was cross-validated against an ANSYS thermal-structural model on a representative 12 mm, 3,000 mm seam. The baseline comparison reported 80.6% agreement before calibration.</p></div>
+            <div class="case-box"><span class="case-label">Reported outcome</span><p>Heat input was reduced from 1.41 to 0.96 kJ/mm. The report predicts 31.8% lower transverse shrinkage from heat-input optimization and 86.8% lower net residual shrinkage when pre-weld compensation is added. These are model predictions, not shop-floor measurements.</p></div>
+          </div>
+          <div class="case-gallery">
+            <figure class="image-depth"><img src="assets/engineering/bevpl/ansys-deformation.jpg" alt="ANSYS thermal structural simulation result" loading="lazy" decoding="async"><figcaption>Thermal-structural result</figcaption></figure>
+            <figure class="image-depth"><img src="assets/engineering/bevpl/shrinkage-chart.png" alt="Predicted net transverse shrinkage comparison" loading="lazy" decoding="async"><figcaption>Parameter optimization + compensation</figcaption></figure>
+            <figure class="image-depth"><img src="assets/engineering/bevpl/distortion-chart.jpg" alt="Predicted distortion versus heat input" loading="lazy" decoding="async"><figcaption>Model response vs heat input</figcaption></figure>
+          </div>
+          <div class="card-stack"><span class="stack-pill">ANSYS</span><span class="stack-pill">Thermal-Structural FEA</span><span class="stack-pill">Okerblom-type Model</span><span class="stack-pill">Python</span><span class="stack-pill">Welding Engineering</span></div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="card-top"><span class="card-badge badge-blue">🛡️ National Student Hack-A-Stage 2026</span><span class="card-tag">Case Study 02</span><span class="card-date">2026</span></div>
+          <h3 class="card-title">SafeSense 3D — Uncertainty-Aware Safety for Automated Machinery</h3>
+          <p class="case-role">Robo Rebels · Track 01 · Algorithmic Safety &amp; Hazard Mitigation</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Developed the deterministic simulation logic and adaptive safety-envelope workflow used to connect speed, confidence, stopping distance and risk state.</p>
+          <div class="case-grid">
+            <div class="case-box"><span class="case-label">The problem</span><p>A fixed safety zone does not adapt to machine speed or sensing uncertainty. The design question was: how much safety space does the machine need right now?</p></div>
+            <div class="case-box"><span class="case-label">The approach</span><p>Sense → Estimate → Adapt → Decide → Act. Virtual LiDAR and thermal cues feed distance, velocity and confidence estimates; the safety envelope then combines stopping distance, reaction distance and uncertainty margin.</p></div>
+            <div class="case-box"><span class="case-label">Safety principle</span><p>Uncertainty can expand the protective envelope, but it cannot reduce the deterministic safety floor. Risk states use distance, time-to-collision, machine state and confidence so each action has a physical reason.</p></div>
+            <div class="case-box"><span class="case-label">Simulation</span><p>The prototype evaluates clear, approach, critical, occlusion, conflicting-sensor and imminent-hazard scenarios. The submission explicitly describes this as deterministic physics simulation with sensor-confidence scenarios, not physical sensor data.</p></div>
+          </div>
+          <div class="case-gallery single-gallery"><figure><img src="assets/engineering/safesense/validation-chart.png" alt="SafeSense 3D validation chart across hazard scenarios" loading="lazy" decoding="async"><figcaption>Adaptive safety envelope validation</figcaption></figure></div>
+          <div class="card-stack"><span class="stack-pill">Virtual LiDAR</span><span class="stack-pill">TTC</span><span class="stack-pill">Safety Envelope</span><span class="stack-pill">Uncertainty</span><span class="stack-pill">Digital Twin</span></div>
+          <div class="safety-console" data-safety-console>
+            <div class="console-top"><span>LIVE SIMULATION</span><strong id="safety-state">SAFE</strong></div>
+            <div class="console-grid">
+              <label>Speed <output id="safety-speed-value">1.2 m/s</output><input id="safety-speed" type="range" min="0.4" max="3.2" step="0.1" value="1.2"></label>
+              <label>Confidence <output id="safety-confidence-value">0.90</output><input id="safety-confidence" type="range" min="0.30" max="0.98" step="0.01" value="0.90"></label>
+              <div class="safety-visual"><div class="machine-dot"></div><div class="safety-envelope" id="safety-envelope"></div><span>protective envelope</span></div>
+              <div class="safety-readout"><span>d_stop <b id="safety-stop">0.24 m</b></span><span>d_safe <b id="safety-safe">0.55 m</b></span><span>TTC <b id="safety-ttc">1.80 s</b></span></div>
+            </div>
+            <small>Deterministic physics simulation · no physical sensor data claimed</small>
+          </div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="card-top"><span class="card-badge badge-gold">🏆 Caterpillar Tech Challenge 2026</span><span class="card-tag">Case Study 03</span><span class="card-date">2026</span></div>
+          <h3 class="card-title">OILIQ — Edge Equipment Health Monitoring</h3>
+          <p class="case-role">Team OILIQ · Caterpillar Tech Challenge 2026 · Top 30 / 1,500+ teams</p><p class="contribution-line"><b>MY CONTRIBUTION</b> Software pipeline, signal processing, condition classification and local fault-escalation logic.</p>
+          <div class="case-grid">
+            <div class="case-box"><span class="case-label">The problem</span><p>Convert several equipment-condition indicators into a local health state before a fault becomes a late-stage maintenance event.</p></div>
+            <div class="case-box"><span class="case-label">System</span><p>Software-only processing of temperature, soot, oxidation and TBN signals with Normal / Caution / Critical classification and local fault escalation.</p></div>
+            <div class="case-box"><span class="case-label">Engineering constraints</span><p>The design prioritizes local processing, deterministic classification and fast fault escalation without relying on a cloud round trip. No physical hardware is claimed in this portfolio.</p></div>
+            <div class="case-box"><span class="case-label">Reported performance</span><p>The project records sub-5 ms processing latency for the classification / escalation path and reached the Top 30 stage of the Caterpillar challenge.</p></div>
+          </div>
+          <div class="oiliq-proof" aria-label="OILIQ software processing architecture">
+            <div><span>INPUT SIGNALS</span><b>TEMP · SOOT · OXID. · TBN</b></div>
+            <i>→</i><div><span>SOFTWARE PIPELINE</span><b>FILTER · CLASSIFY · ESCALATE</b></div>
+            <i>→</i><div><span>LOCAL DECISION</span><b>NORMAL · CAUTION · CRITICAL</b></div>
+          </div>
+          <p class="source-disclaimer">Software-only prototype. No physical hardware or hardware photo is claimed here.</p>
+          <div class="card-stack"><span class="stack-pill">Software Pipeline</span><span class="stack-pill">Signal Processing</span><span class="stack-pill">Classification</span><span class="stack-pill">Fault Escalation</span></div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="card-top"><span class="card-badge badge-gold">📄 GSoC 2026 Proposal</span><span class="card-tag">Case Study 04</span><span class="card-date">2026</span></div>
+          <h3 class="card-title">Agentic Dora — Safe Agent-Driven Robot Control</h3>
+          <p class="case-role">Proposal + working prototype for the dora-rs dataflow framework</p>
+          <div class="case-grid">
+            <div class="case-box"><span class="case-label">The problem</span><p>LLM agents can generate invalid or unsafe robot commands, so safety validation should not depend on the agent behaving perfectly.</p></div>
+            <div class="case-box"><span class="case-label">Architecture</span><p>Input → agent → action mapping → independent Safety Node → PyBullet simulation, with Dora nodes passing typed JSON messages.</p></div>
+            <div class="case-box"><span class="case-label">Safety &amp; observability</span><p>The Safety Node runs independently, clamps or stops invalid commands and holds the last safe command while a slower LLM call completes. OTLP traces expose decisions to SigNoz.</p></div>
+            <div class="case-box"><span class="case-label">Outcome</span><p>The prototype runs locally; the SigNoz / OTLP observability guide and a Python documentation fix were merged into dora-rs, while the complete proposal was submitted to GSoC 2026.</p></div>
+          </div>
+          <div class="card-stack"><span class="stack-pill">dora-rs</span><span class="stack-pill">smolagents</span><span class="stack-pill">PyBullet</span><span class="stack-pill">OpenTelemetry</span><span class="stack-pill">Ollama</span></div>
+          <div class="case-links"><a href="https://github.com/DEFAULTE-R/dora-agentic-demo" target="_blank" rel="noopener noreferrer" class="stack-pill case-link">View prototype on GitHub ↗</a></div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="card-top"><span class="card-badge badge-gold">💡 IMECE 2026 · Innovation Square</span><span class="card-tag">Case Study 05</span><span class="card-date">2026</span></div>
+          <h3 class="card-title">Smart Hybrid Die Repair</h3>
+          <p class="case-role">Student ideathon concept · TRL below 4</p>
+          <div class="case-grid">
+            <div class="case-box"><span class="case-label">The problem</span><p>Localized die damage can force replacement of an otherwise usable tool. Powder-fed DED can repair the region but brings high equipment cost and leaves a surface that needs finishing.</p></div>
+            <div class="case-box"><span class="case-label">The concept</span><p>A localized repair chain: scan → wire-fed DED → laser surface remelting → in-situ micro-milling → verification.</p></div>
+            <div class="case-box"><span class="case-label">Integration</span><p>Wire feedstock is positioned as a lower-cost feed route; laser remelting conditions the deposited surface; micro-milling completes the repair without moving the part to another machine.</p></div>
+            <div class="case-box"><span class="case-label">Status</span><p>The reported waste-reduction figure is a concept projection. This is an ideation-stage proposal and no physical prototype is claimed.</p></div>
+          </div>
+          <div class="card-stack"><span class="stack-pill">Wire-DED</span><span class="stack-pill">Laser Remelting</span><span class="stack-pill">Micro-Milling</span><span class="stack-pill">Tool Repair</span></div>
+        </article>
+
+        <article class="case-card reveal">
+          <div class="card-top"><span class="card-badge badge-blue">🛠 Design Lab Series</span><span class="card-tag">Case Study 06</span><span class="card-date">2025–2026</span></div>
+          <h3 class="card-title">Fusion 360 Machine-Element Models</h3>
+          <p class="case-role">Machine drawing / modelling work · Saveetha Engineering College</p>
+          <p class="card-desc">Parametric models of standard joints and mechanisms, including knuckle joint, zip &amp; cotter joint, half-lap muff coupling, shock absorber and bench vice. These are used to demonstrate practical CAD, assembly and machine-element modelling rather than just software familiarity.</p>
+          <div class="card-stack"><span class="stack-pill">Fusion 360</span><span class="stack-pill">Parametric CAD</span><span class="stack-pill">Assemblies</span><span class="stack-pill">Machine Elements</span></div>
+          <div class="case-links">
+            <a href="https://a360.co/3TrNLkC" target="_blank" rel="noopener noreferrer" class="stack-pill case-link">Knuckle Joint ↗</a>
+            <a href="https://a360.co/4yeCao2" target="_blank" rel="noopener noreferrer" class="stack-pill case-link">Zip &amp; Cotter ↗</a>
+            <a href="https://a360.co/4y86YH3" target="_blank" rel="noopener noreferrer" class="stack-pill case-link">Muff Coupling ↗</a>
+            <a href="https://a360.co/4xIEYss" target="_blank" rel="noopener noreferrer" class="stack-pill case-link">Shock Absorber ↗</a>
+            <a href="https://a360.co/4hkhHag" target="_blank" rel="noopener noreferrer" class="stack-pill case-link">Bench Vice ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">06</span><h2>About</h2></div>
+        <div class="about-grid">
+          <div class="about-left">
+            <blockquote class="about-quote reveal">“I’m a Mechanical Engineering student interested in the point where physical systems, simulation and computation meet.”</blockquote>
+            <p class="about-desc reveal reveal-delay-1">Now in my second year at Saveetha Engineering College, I’ve worked across mechanical design, CAE, additive manufacturing, embedded condition monitoring, autonomous robotics and open-source infrastructure. I prefer projects where assumptions can be tested, the analysis can be inspected and the result can be validated with hardware or repeatable simulation.</p>
+            <div class="about-pills reveal reveal-delay-2"><span class="pill">⚙️ Mechanical-first</span><span class="pill">📐 Simulation-driven</span><span class="pill">🤖 Robotics curious</span><span class="pill">🔧 Build + validate</span></div>
+          </div>
+          <div class="about-right">
+            <h3 class="roles-title reveal">Roles &amp; Involvement</h3>
+            <ul class="roles-list reveal reveal-delay-1">
+              <li><span class="role-name">SAE India Southern Section</span><span class="role-details">Co-Captain · Materials Lead · 2026–Present</span></li>
+              <li><span class="role-name">SAE India · BAJA SAEINDIA</span><span class="role-details">Design &amp; Simulation Head</span></li>
+              <li><span class="role-name">SAEINDIA Bicycle Design Challenge</span><span class="role-details">Vice-Captain · Materials Lead · 8th Edition</span></li>
+              <li><span class="role-name">ASME Student Chapter</span><span class="role-details">Treasurer · Saveetha Engineering College</span></li>
+              <li><span class="role-name">Robo Rebels</span><span class="role-details">Team Captain · Engineering competitions and research projects</span></li>
+              <li><span class="role-name">dora-rs Robotics Framework</span><span class="role-details">Open-Source Contributor · 2025–Present</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">07</span><h2>Engineering Stack</h2></div>
+        <p class="section-note reveal">Skills are tied to the projects and coursework shown on this page; no proficiency score is implied.</p>
+        <div class="skills-wrapper reveal">
+          <div class="skill-group"><h4 class="skill-label">CAD &amp; Design</h4><div class="skill-tiles-grid">
+            <div class="skill-tile"><div class="skill-tile-text">F360</div><span>Fusion 360</span></div><div class="skill-tile"><div class="skill-tile-text">GD</div><span>Generative Design</span></div><div class="skill-tile"><div class="skill-tile-text">DfAM</div><span>DfAM / Design for Manufacturing</span></div><div class="skill-tile"><div class="skill-tile-text">CAD</div><span>Parametric CAD &amp; Assemblies</span></div>
+          </div></div>
+          <div class="skill-group"><h4 class="skill-label">Simulation &amp; CAE</h4><div class="skill-tiles-grid">
+            <div class="skill-tile"><div class="skill-tile-text">ANS</div><span>ANSYS</span></div><div class="skill-tile"><div class="skill-tile-text">FEA</div><span>Structural FEA</span></div><div class="skill-tile"><div class="skill-tile-text">CFD</div><span>ANSYS Fluent / PyFluent</span></div><div class="skill-tile"><div class="skill-tile-text">TH</div><span>Thermal Analysis</span></div><div class="skill-tile"><div class="skill-tile-text">MAT</div><span>MATLAB</span></div>
+          </div></div>
+          <div class="skill-group"><h4 class="skill-label">Embedded &amp; Robotics</h4><div class="skill-tiles-grid">
+            <div class="skill-tile"><div class="skill-tile-text">STM</div><span>STM32</span></div><div class="skill-tile"><div class="skill-tile-text">ESP</div><span>ESP32-S3</span></div><div class="skill-tile"><div class="skill-tile-text">AMR</div><span>AMR Systems</span></div><div class="skill-tile"><div class="skill-tile-text">SEN</div><span>Sensor Integration</span></div><div class="skill-tile"><div class="skill-tile-text">TFL</div><span>TFLite</span></div>
+          </div></div>
+          <div class="skill-group"><h4 class="skill-label">Programming &amp; Infrastructure</h4><div class="skill-tiles-grid">
+            <div class="skill-tile"><i class="devicon-python-plain colored"></i><span>Python</span></div><div class="skill-tile"><i class="devicon-cplusplus-plain colored"></i><span>C / C++</span></div><div class="skill-tile"><div class="skill-tile-text">RS</div><span>Rust</span></div><div class="skill-tile"><i class="devicon-git-plain colored"></i><span>Git / GitHub</span></div><div class="skill-tile"><i class="devicon-linux-plain"></i><span>Linux / WSL2</span></div>
+          </div></div>
+          <div class="skill-group"><h4 class="skill-label">Manufacturing &amp; Validation</h4><div class="skill-tiles-grid">
+            <div class="skill-tile"><div class="skill-tile-text">FDM</div><span>FDM 3D Printing</span></div><div class="skill-tile"><div class="skill-tile-text">AM</div><span>Additive Manufacturing</span></div><div class="skill-tile"><div class="skill-tile-text">VAL</div><span>Testing &amp; Validation</span></div><div class="skill-tile"><div class="skill-tile-text">RCA</div><span>Fault / Root-Cause Analysis</span></div>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">08</span><h2>Achievements &amp; Research</h2></div>
+        <div class="achievements-grid">
+          <div class="achievement-card reveal"><div class="achievement-icon">🏆</div><h3 class="achievement-title">Caterpillar Tech Challenge 2026</h3><p class="achievement-detail">Top 30 / 1,500+ teams</p><p class="achievement-subtext">Team OILIQ · Engine oil condition monitoring</p></div>
+          <div class="achievement-card reveal reveal-delay-1"><div class="achievement-icon">🏆</div><h3 class="achievement-title">ASME IMECE Brain Bolt 2026</h3><p class="achievement-detail">National Finalist · Top 15 / 300+</p><p class="achievement-subtext">Team Robo Rebels · BEVPL welding-distortion problem statement</p></div>
+          <div class="achievement-card reveal reveal-delay-2"><div class="achievement-icon">📄</div><h3 class="achievement-title">SAE APAC 2026</h3><p class="achievement-detail">Research Paper Accepted</p><p class="achievement-subtext">Edge-based predictive diagnostics for industrial monitoring</p></div>
+          <div class="achievement-card reveal"><div class="achievement-icon">📌</div><h3 class="achievement-title">Smart India Hackathon 2026</h3><p class="achievement-detail">Selected Project</p><p class="achievement-subtext">Robotic assembly · Generative Design · FEA · DfAM</p></div>
+          <div class="achievement-card reveal reveal-delay-1"><div class="achievement-icon">🏁</div><h3 class="achievement-title">ASME BrainBolt 2025</h3><p class="achievement-detail">Finalist · CFD Sprint</p><p class="achievement-subtext">Engineering CFD automation challenge</p></div>
+          <div class="achievement-card reveal reveal-delay-2"><div class="achievement-icon">🔬</div><h3 class="achievement-title">Open-Source Robotics</h3><p class="achievement-detail">Open-source robotics contribution</p><p class="achievement-subtext">~861 LOC contributed · observability + hardware inference</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-container">
+        <div class="section-header reveal"><span class="section-label">09</span><h2>Let's Build</h2></div>
+        <p class="contact-subtext reveal">Open to mechanical design, CAE, manufacturing, robotics and industrial R&amp;D internships. Available year-round · 24/7. Current academic base: Chennai, India.</p>
+        <div class="contact-grid">
+          <a href="mailto:harilogesh2019@gmail.com" class="contact-card reveal"><div class="contact-icon">✉</div><div><span class="contact-label">Email</span><span class="contact-value">harilogesh2019@gmail.com</span></div></a>
+          <a href="https://github.com/DEFAULTE-R" class="contact-card reveal reveal-delay-1" target="_blank" rel="noopener noreferrer"><div class="contact-icon">⌘</div><div><span class="contact-label">GitHub</span><span class="contact-value">DEFAULTE-R</span></div></a>
+          <a href="https://www.linkedin.com/in/haril2019/" class="contact-card reveal reveal-delay-2" target="_blank" rel="noopener noreferrer"><div class="contact-icon">in</div><div><span class="contact-label">LinkedIn</span><span class="contact-value">Connect</span></div></a>
+          <a href="assets/Hari_L_Resume_2026.pdf" class="contact-card reveal reveal-delay-3" target="_blank" rel="noopener noreferrer"><div class="contact-icon">↗</div><div><span class="contact-label">Resume</span><span class="contact-value">View PDF</span></div></a>
+        </div>
+        <p class="source-disclaimer">Portfolio figures are presented as documented project results, simulation outputs or concept-stage projections as labelled.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"><div class="section-container"><p class="reveal">Hari L · Mechanical Engineering Portfolio · 2026</p></div></footer>
+  <div id="cursor-dot" class="cursor-dot"></div><div id="cursor-outline" class="cursor-outline"></div>
+  <script src="script.js"></script>
+</body>
+</html>
